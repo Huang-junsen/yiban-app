@@ -1,0 +1,37 @@
+{
+  "id": "2850089",
+  "name": "易班",
+  "font_family": "iconfont",
+  "css_prefix_text": "icon-",
+  "description": "",
+  "glyphs": [
+    {
+      "icon_id": "145438",
+      "name": "搜索",
+      "font_class": "sousuo",
+      "unicode": "e62f",
+      "unicode_decimal": 58927
+    },
+    {
+      "icon_id": "900131",
+      "name": "扫码",
+      "font_class": "saoma",
+      "unicode": "e648",
+      "unicode_decimal": 58952
+    },
+    {
+      "icon_id": "4569037",
+      "name": "qiandao",
+      "font_class": "qiandao",
+      "unicode": "e62e",
+      "unicode_decimal": 58926
+    },
+    {
+      "icon_id": "13763377",
+      "name": "签到",
+      "font_class": "qiandao1",
+      "unicode": "e60f",
+      "unicode_decimal": 58895
+    }
+  ]
+}

@@ -1,0 +1,38 @@
+{
+    "pages": [
+        "pages/index/index",
+        "pages/my/my",
+        "pages/adhibition/adhibition",
+        "pages/interact/interact",
+        "pages/xiaobenhua/xiaobenhua",
+        "pages/test/test",
+        "pages/report/report",
+        "pages/leave/leave",
+        "pages/clearLeave/clearLeave"
+    ],
+    "subPackages": [],
+    "window": {
+        "navigationBarTextStyle": "black",
+        "navigationBarTitleText": "uni-app",
+        "navigationBarBackgroundColor": "#F8F8F8",
+        "backgroundColor": "#F8F8F8"
+    },
+    "tabBar": {
+        "list": [
+            {
+                "pagePath": "pages/index/index"
+            },
+            {
+                "pagePath": "pages/adhibition/adhibition"
+            },
+            {
+                "pagePath": "pages/interact/interact"
+            },
+            {
+                "pagePath": "pages/my/my"
+            }
+        ]
+    },
+    "usingComponents": {},
+    "sitemapLocation": "sitemap.json"
+}
