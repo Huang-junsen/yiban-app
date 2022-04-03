@@ -5163,7 +5163,14 @@ var render = function() {
                                         },
                                         attrs: { _i: "98-" + $31 + "-" + _si }
                                       },
-                                      [_vm._v("1")]
+                                      [
+                                        _vm._v(
+                                          _svm._$g(
+                                            "98-" + $31 + "-" + _si,
+                                            "t0-0"
+                                          )
+                                        )
+                                      ]
                                     )
                                   ]
                                 }
@@ -5209,31 +5216,55 @@ var render = function() {
                                             )
                                           ]
                                         ),
-                                        _c(
-                                          "v-uni-view",
-                                          {
-                                            staticClass: _svm._$g(
-                                              "102-" + $31 + "-" + _si,
-                                              "sc"
-                                            ),
-                                            attrs: {
-                                              _i: "102-" + $31 + "-" + _si
-                                            }
-                                          },
-                                          [
-                                            _vm._v(
-                                              _svm._$g(
-                                                "102-" + $31 + "-" + _si,
-                                                "t0-0"
-                                              ) +
-                                                " " +
-                                                _svm._$g(
+                                        _svm._$g("102-" + $31 + "-" + _si, "i")
+                                          ? _c(
+                                              "v-uni-view",
+                                              {
+                                                staticClass: _svm._$g(
                                                   "102-" + $31 + "-" + _si,
-                                                  "t0-1"
+                                                  "sc"
+                                                ),
+                                                attrs: {
+                                                  _i: "102-" + $31 + "-" + _si
+                                                }
+                                              },
+                                              [
+                                                _vm._v(
+                                                  _svm._$g(
+                                                    "102-" + $31 + "-" + _si,
+                                                    "t0-0"
+                                                  ) +
+                                                    " " +
+                                                    _svm._$g(
+                                                      "102-" + $31 + "-" + _si,
+                                                      "t0-1"
+                                                    )
                                                 )
+                                              ]
                                             )
-                                          ]
-                                        )
+                                          : _c(
+                                              "v-uni-view",
+                                              {
+                                                staticClass: _svm._$g(
+                                                  "103-" + $31,
+                                                  "sc"
+                                                ),
+                                                attrs: { _i: "103-" + $31 }
+                                              },
+                                              [
+                                                _vm._v(
+                                                  _svm._$g(
+                                                    "103-" + $31 + _si,
+                                                    "t0-0"
+                                                  ) +
+                                                    " " +
+                                                    _svm._$g(
+                                                      "103-" + $31 + _si,
+                                                      "t0-1"
+                                                    )
+                                                )
+                                              ]
+                                            )
                                       ],
                                       1
                                     ),
@@ -5245,7 +5276,7 @@ var render = function() {
                                           margin: "20rpx 0 20rpx 0",
                                           "font-size": "30rpx"
                                         },
-                                        attrs: { _i: "103-" + $31 + "-" + _si }
+                                        attrs: { _i: "104-" + $31 + "-" + _si }
                                       },
                                       [_vm._v("已同意")]
                                     ),
@@ -5255,11 +5286,51 @@ var render = function() {
                                         staticStyle: {
                                           color: "#87d068",
                                           "margin-left": "-30rpx",
-                                          "font-size": "25rpx"
+                                          "font-size": "25rpx",
+                                          display: "flex"
                                         },
-                                        attrs: { _i: "104-" + $31 + "-" + _si }
+                                        attrs: { _i: "105-" + $31 + "-" + _si }
                                       },
-                                      [_vm._v("通过")]
+                                      [
+                                        _c(
+                                          "v-uni-text",
+                                          {
+                                            attrs: {
+                                              _i: "106-" + $31 + "-" + _si
+                                            }
+                                          },
+                                          [_vm._v("通过")]
+                                        ),
+                                        _svm._$g("107-" + $31 + "-" + _si, "i")
+                                          ? _c(
+                                              "v-uni-view",
+                                              {
+                                                staticStyle: {
+                                                  color: "#87d068",
+                                                  "margin-left": "20rpx",
+                                                  "font-size": "25rpx"
+                                                },
+                                                attrs: {
+                                                  _i: "107-" + $31 + "-" + _si
+                                                }
+                                              },
+                                              [
+                                                _vm._v(
+                                                  _svm._$g(
+                                                    "107-" + $31 + "-" + _si,
+                                                    "t0-0"
+                                                  ) +
+                                                    " " +
+                                                    _svm._$g(
+                                                      "107-" + $31 + "-" + _si,
+                                                      "t0-1"
+                                                    )
+                                                )
+                                              ]
+                                            )
+                                          : _vm._e()
+                                      ],
+                                      1
                                     )
                                   ]
                                 }
@@ -5278,7 +5349,7 @@ var render = function() {
                           left: "-25rpx",
                           bottom: "0"
                         },
-                        attrs: { _i: 105 }
+                        attrs: { _i: 108 }
                       })
                     ],
                     2
@@ -5294,7 +5365,7 @@ var render = function() {
       ),
       _c("v-uni-view", {
         staticStyle: { width: "100%", height: "88rpx" },
-        attrs: { _i: 106 }
+        attrs: { _i: 109 }
       }),
       _c(
         "v-uni-button",
@@ -5309,7 +5380,7 @@ var render = function() {
             "border-radius": "0",
             color: "#6db0f7"
           },
-          attrs: { _i: 107 }
+          attrs: { _i: 110 }
         },
         [_vm._v("转发审批表单")]
       )

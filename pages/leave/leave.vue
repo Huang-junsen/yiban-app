@@ -135,16 +135,20 @@
 								<template v-slot:node>
 									<view class="u-node" style="background: #87d068; color: #fff;">
 										<!-- 此处为uView的icon组件 -->
-										1
+										{{index + 1}}
 									</view>
 								</template>
 								<template v-slot:content>
 									<view style="display: flex; justify-content: space-between; padding-right: 30rpx;">
 										<view class="u-order-title">{{item.teacherName}}({{item.teacherID}})</view>
-										<view class="u-order-time">{{leaveList.affairForm.date}} {{consent}}</view>
+										<view class="u-order-time" v-if="index !== leaveList.classForm.length - 1">{{leaveList.affairForm.date}} {{consent}}</view>
+										<view class="u-order-time" v-else>{{leaveList.affairForm.date}} {{endConsentDate}}</view>
 									</view>
 									<view style="color: #87d068; margin: 20rpx 0 20rpx 0; font-size: 30rpx;">已同意</view>
-									<view style="color: #87d068; margin-left: -30rpx; font-size: 25rpx;">通过</view>
+									<view style="color: #87d068; margin-left: -30rpx; font-size: 25rpx; display: flex;">
+										<text>通过</text>
+										<view v-if="leaveList.classForm.length === 1 || index === leaveList.classForm.length - 1" style="color: #87d068; margin-left: 20rpx; font-size: 25rpx;">{{leaveList.affairForm.date}} {{endConsentDate}}</view>
+									</view>
 								</template>
 							</u-time-line-item>
 							<view style="width: 50rpx; border-bottom: 1rpx solid #ccc; position: absolute; left: -25rpx; bottom: 0;"></view>
@@ -167,7 +171,10 @@
 				},
 				active: false,
 				// image: uni.getStorageSync("storage_image")
-				leaveList: []
+				leaveList: [],
+				date: '',
+				consent: '',
+				endConsentDate: '',
 			};
 		},
 		methods:{
@@ -179,12 +186,38 @@
 			try {
 				this.leaveList = JSON.parse(options.listObj);
 				this.date = this.leaveList.affairForm.date.replace(/-/g,"")
-				this.consent = this.leaveList.affairForm.startTime.split(":")[0]+":"+this.leaveList.affairForm.startTime.split(":")[1].split('')[0]+5
-				
+				console.log(this.leaveList.affairForm.startTime,"起始时间")
+				let endDate = this.leaveList.affairForm.startTime.split(':');
+				console.log(endDate)
+					let start = parseInt(endDate[0]);
+					let end = parseInt(endDate[1]) + 5;
+					let endConsentDate = parseInt(endDate[1]) + 10;
+					if(end > 60 && endConsentDate > 60){
+						end = end - parseInt(endDate[1]);
+						endConsentDate = endConsentDate - parseInt(endDate[1]);
+						if(start <= 9 || end <= 9){
+							start+=1;
+							start = '0' + start;
+							end = '0' + end;
+						}
+						if(endConsentDate <= 9){
+							endConsentDate = '0' + endConsentDate;
+						}
+					}
+					if(start === 0){
+						start = '00';
+					}
+					if(end <= 9 && typeof end !== 'string'){
+						end = '0' + end;
+					}
+					if(start <= 9 && typeof start !== 'string'){
+						start = '0' + start;
+					} 
+					this.consent = start + ":" + end;
+					this.endConsentDate = start + ":" + endConsentDate;
 			} catch (e) {
-			    // error
+			    // error 
 			}
-			console.log(JSON.parse(options.listObj))
 		}
 	}
 </script>
