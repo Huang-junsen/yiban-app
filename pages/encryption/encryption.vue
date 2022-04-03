@@ -28,7 +28,7 @@
 					    title: '认证成功',
 					    duration: 2000
 					});
-					uni.setStorageSync('isEncryption',true);
+					uni.setStorageSync('isEncryption','true');
 				}
 			}
 		}

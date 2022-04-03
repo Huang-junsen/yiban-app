@@ -2,8 +2,8 @@
     "name" : "易班",
     "appid" : "__UNI__980B30A",
     "description" : "易班",
-    "versionName" : "1.1.6",
-    "versionCode" : 106,
+    "versionName" : "1.1.7",
+    "versionCode" : 107,
     "transformPx" : false,
     /* 5+App特有相关 */
     "app-plus" : {
