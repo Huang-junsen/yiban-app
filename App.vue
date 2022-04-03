@@ -1,13 +1,16 @@
 <script>
+	import md5Libs from "uview-ui/libs/function/md5";
 	export default {
 		onLaunch: function() {
-			console.log('App Launch')
-			// uni.clearStorageSync();
 			try {
-			    // console.log(JSON.parse(uni.getStorageSync("storage_leaveList")).length,"长度")
-			    // console.log(JSON.parse(uni.getStorageSync("storage_leaveList")),"剩余")
 				if(JSON.parse(uni.getStorageSync("storage_leaveList")).length >= 5){
 					uni.setStorageSync('storage_leaveList', JSON.stringify(JSON.parse(uni.getStorageSync("storage_leaveList")).slice(0,3)));
+				}
+				uni.setStorageSync('encryption', md5Libs.md5('6c15a30fc44f0cb313168c5dcae1e9632184491e52d0a2934bd260874cdcc3f0'));
+				if(uni.getStorageSync('isEncryption') === false){ 
+					uni.reLaunch({
+						url: '/pages/encryption/encryption'
+					});
 				}
 			} catch (e) {
 			    // error 

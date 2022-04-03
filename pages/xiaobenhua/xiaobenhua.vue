@@ -28,7 +28,6 @@
 		},
 		methods:{
 			report(){
-				
 				uni.navigateTo({
 					url:'/pages/report/report'
 				})

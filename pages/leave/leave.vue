@@ -12,7 +12,12 @@
 			</view>
 		</u-navbar>
 		<view class="content" >
-			<image src="../../static/shenpi.png" style="width: 180rpx; height: 150rpx; position: fixed; top: 180rpx; right: 40rpx; object-fit: cover;" mode=""></image>
+			<!-- <image src="../../static/shenpi.png" style="width: 180rpx; height: 150rpx; position: fixed; top: 180rpx; right: 40rpx; object-fit: cover;" mode=""></image> -->
+			<view class="turnContainer">
+			    <div class="bg">
+			        <image class="inner" src="../../static/xing.png" mode="">
+			    </div>
+			</view>
 			<view class="" style="width: 100%; height: 88rpx; background-color: #fff; font-size: 35rpx; text-align: center; line-height: 88rpx;">{{leaveList.relationForm.userName}}的请销假</view>
 			<view> 
 				<view class="titleBorder">申请人</view>
@@ -72,6 +77,10 @@
 						<view class="">{{date}}142647990600</view>
 					</view>
 					<view class="itemInfo">
+						<view class="title">请假类型</view>
+						<view class="">{{leaveList.affairForm.leave}}</view>
+					</view>
+					<view class="itemInfo"> 
 						<view class="title">外出原因说明</view>
 						<view class="" style="width: 520rpx;">{{leaveList.affairForm.textareaValue}}</view>
 					</view>
@@ -80,7 +89,7 @@
 						<view class="">{{leaveList.affairForm.sValue === "是" ? "有课" : "无课"}}</view>
 					</view>
 					<view class="itemInfo">
-						<view class="title">请假条及其他相关作证材料</view>
+						<view class="title">请假条或实习证明</view>
 						<view class="">
 							<image v-for="(item,index) in leaveList.affairForm.image" style="width: 150rpx; height: 150rpx; margin-right: 20rpx;" :src="item" mode=""></image>
 						</view>
@@ -94,12 +103,8 @@
 						<view class="">{{leaveList.affairForm.date}} {{leaveList.affairForm.endTime}}</view>
 					</view>
 					<view class="itemInfo">
-						<view class="title">时长</view>
+						<view class="title">时长(天)</view>
 						<view class="">{{leaveList.affairForm.duration}}</view>
-					</view>
-					<view class="itemInfo">
-						<view class="title">请假类型</view>
-						<view class="">{{leaveList.affairForm.leave}}</view>
 					</view>
 					<view class="itemInfo">
 						<view class="title">本人联系电话</view>
@@ -185,6 +190,9 @@
 </script>
 
 <style lang="scss">
+	@keyframes spin{
+	        to{transform: rotate(1turn);}
+	    }
 	.slot-wrap{
 		width: 750rpx;
 		display: flex;
@@ -213,6 +221,47 @@
 		// height: 900px;
 		position: relative;
 		z-index: 1;
+		.turnContainer{
+			width: 180rpx;
+			height: 150rpx;
+			position: fixed;
+			// padding: 20px;
+			top: 180rpx;
+			right: 40rpx;
+			border-radius: 100%;
+			// object-fit: cover;
+			.bg{
+				width: 100%;
+				height: 100%;
+				background: url(../../static/turnBg.png) center center;
+				background-size: cover;
+				.inner{
+					height: 100%;
+					width: 100%;
+					animation: spin 10s infinite linear;
+					transform-origin: 50% 39px;
+					object-fit: cover;
+				}
+			}
+		}
+		// .box{
+		//         border-radius: 100%;
+		//         padding: 20px;
+		//         width: 120px;
+		//         height: 100px;
+		//     }
+		//     .box .bg{
+		//         width: 100%;
+		//         height: 100%;
+		//         background: url("底图.png") center center;
+		//         background-size: cover;
+		//     }
+		//     .box .bg .inner{
+		//         height: 100%;
+		//         width: 100%;
+		//         animation: spin 10s infinite linear;
+		//         transform-origin: 50% 50px;
+		//     }
 		.titleBorder{
 			width: 100%;
 			height: 25rpx;

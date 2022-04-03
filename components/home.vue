@@ -1,38 +1,5 @@
 <template>
 	<view>
-		<!-- <u-navbar :is-back="false"   :background="background" :border-bottom="false">
-			<view class="slot-wrap">
-				<view class="title">
-					广州科技贸易职业学院 · 易班
-				</view>
-				<view class="icon">
-					<view class="iconfont icon-sousuo"></view>
-					<view class="iconfont icon-qiandao"></view>
-					<view class="iconfont icon-saoma"></view>
-				</view>
-			</view>
-		</u-navbar>
-		<view class="content"> -->
-			<!-- 正文内容 -->
-			<!-- <view class="swiper-bg">
-			</view>
-			<view class="content-top">
-				<swiper @change="topSwiperTab" :current="uCurrent" :indicator-dots="true" :autoplay="true" :interval="3000" :duration="1000" indicator-active-color="#aa0000">
-					<swiper-item>
-						<image src="../../static/banner1.jpg" mode=""></image>
-					</swiper-item>
-					<swiper-item>
-						<image src="../../static/banner2.jpg" mode=""></image>
-					</swiper-item>
-					<swiper-item>
-						<image src="../../static/banner3.jpg" mode=""></image>
-					</swiper-item>
-				</swiper>
-				<view class="rect" >	
-					<view :class="['u-indicator-item-rect',index == uCurrent + 1 ? 'active' : '']" v-for="index in 3"></view>	
-				</view>
-			</view>
-		</view> -->
 		<u-tabbar v-model="current" :list="list" :mid-button="true" :before-switch="beforeSwitch"></u-tabbar>
 	</view>
 </template>
@@ -42,8 +9,8 @@
 		data() {
 			return {
 				uCurrent:0,
-				list: [
-					{
+				list: [ 
+					{ 
 						iconPath: "home",
 						selectedIconPath: "home-fill",
 						text: '首页',

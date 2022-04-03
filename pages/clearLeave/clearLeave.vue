@@ -215,6 +215,9 @@
 				return this.affairForm.duration
 			}
 		},
+		onLoad: function(option) {
+		  
+		},
 		methods:{
 			addApprover(){
 				this.classFormList.push(this.classForm)
@@ -269,7 +272,24 @@
 				    uni.setStorageSync('storage_leaveList', JSON.stringify(this.leaveList));
 				    uni.setStorageSync('storage_relationForm', JSON.stringify(this.relationForm));
 				
-					
+					uni.navigateBack({
+						delta: 1,
+						success: ()=>{
+							// #ifdef APP-NVUE
+							const eventChannel = this.$scope.eventChannel; // 兼容APP-NVUE
+							// #endif
+							// #ifndef APP-NVUE
+							const eventChannel = this.getOpenerEventChannel();
+							// #endif
+							try {
+								this.leaveList = JSON.parse(uni.getStorageSync("storage_leaveList"));
+								eventChannel.emit('someEvent', {data: this.leaveList});
+							} catch (e) {
+							    // error
+							}
+						
+						}
+					});
 				} catch (e) {
 				    // error
 				}
@@ -282,9 +302,6 @@
 				    sizeType: ['original', 'compressed'], //可以指定是原图还是压缩图，默认二者都有
 				    sourceType: ['album'], //从相册选择
 				    success: function (res) {
-				        // console.log(JSON.stringify(res.tempFilePaths[0]));
-						console.log(res)
-						// uni.setStorageSync('storage_image', res.tempFilePaths[0]);
 						that.fileImage.push(res.tempFilePaths[0])
 						that.affairForm.image = that.fileImage
 				    }

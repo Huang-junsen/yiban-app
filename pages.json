@@ -91,6 +91,15 @@
             }
             
         }
+        ,{
+            "path" : "pages/encryption/encryption",
+            "style" :                                                                                    
+            {
+                "navigationBarTitleText": "",
+                "enablePullDownRefresh": false
+            }
+            
+        }
     ],
 	"globalStyle": {
 		"navigationBarTextStyle": "black",

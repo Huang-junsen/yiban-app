@@ -26,15 +26,18 @@
 					</swiper-item>
 					<swiper-item>
 						<image src="../../static/banner3.jpg" mode=""></image>
+					</swiper-item> 
+					<swiper-item>
+						<image src="../../static/banner4.jpg" mode=""></image>
 					</swiper-item>
 				</swiper>
 				<view class="rect" >	
-					<view :class="['u-indicator-item-rect',index == uCurrent + 1 ? 'active' : '']" v-for="index in 3"></view>	
+					<view :class="['u-indicator-item-rect',index == uCurrent + 1 ? 'active' : '']" v-for="index in 4"></view>	
 				</view>
 			</view>
 			
 			<view class="content-nav">
-				<image src="../../static/test1.jpg" mode=""></image>
+				<image src="../../static/navbar.png" mode=""></image>
 				<view class="clickxbh" @click="xiaobenhua"></view>
 			</view>
 			
@@ -149,7 +152,6 @@
 			},
 			change(index){
 				this.Tabcurrent = index;
-				console.log(index)
 			}
 		}
 	}
@@ -257,7 +259,8 @@
 		position: relative;
 		image{
 			width: 100%;
-			height: 325rpx;
+			height: 520rpx;
+			object-fit: cover;
 			border-radius: 20rpx;
 			overflow: hidden;
 			// position: relative;
@@ -286,7 +289,14 @@
 		}
 		
 	}
-	.school,.original,.headline,.topPost{
+	.school{
+		width: 100%;
+		image{
+			width: 100%;
+			height: 1000px;
+		}
+	}
+	.original,.headline,.topPost{
 		width: 100%;
 		image{
 			width: 100%;
